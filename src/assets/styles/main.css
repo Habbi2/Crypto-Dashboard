@@ -39,11 +39,12 @@
   --transition-normal: all 0.3s ease;
   
   /* Responsive breakpoints */
-  --breakpoint-xs: 410px;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  --breakpoint-xs: 400px; /* iPhone and small mobile devices */
+  --breakpoint-sm: 576px; /* Larger mobile devices */
+  --breakpoint-md: 768px; /* Tablets */
+  --breakpoint-lg: 992px; /* Small laptops */
+  --breakpoint-xl: 1200px; /* Large screens */
+  --breakpoint-xxl: 1440px; /* Extra large screens */
 }
 
 /* Dark Mode Theme */
@@ -97,15 +98,27 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
 }
 
 /* Dashboard */
 .dashboard {
-  padding: var(--spacing-lg);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+/* Extra small device fixes */
+@media (max-width: 430px) {
+  .container {
+    padding: 0 var(--spacing-sm) * 8;
+  }
+  
+  .dashboard {
+    gap: var(--spacing-md);
+  }
 }
 
 @media (min-width: 768px) {
