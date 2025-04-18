@@ -2,8 +2,7 @@
   command = "npm run build"
   publish = "build"
   
-[build.environment]
-  NODE_OPTIONS = "--openssl-legacy-provider"
+# Removed problematic NODE_OPTIONS setting
 
 [[redirects]]
   from = "/*"
