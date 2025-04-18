@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5, h6 {
 .crypto-chart h2 {
   margin-bottom: var(--spacing-lg);
   font-size: 1.5rem;
-  color: var(--primary);
+  color: var (--primary);
 }
 
 /* Loading and Error States */
@@ -858,4 +858,441 @@ h1, h2, h3, h4, h5, h6 {
 
 .notification.info {
   border-left-color: var(--info);
+}
+
+/* Add these new styles to the end of your CSS file */
+
+/* WebSocket toggle styles */
+.websocket-toggle {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.websocket-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.websocket-btn.active {
+  background-color: #e0f7fa;
+  border-color: #81d4fa;
+  color: #0277bd;
+}
+
+.websocket-btn:hover {
+  background-color: #e9ecef;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+
+.status-indicator.connected {
+  background-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.status-indicator.disconnected {
+  background-color: #f44336;
+}
+
+/* Pagination styles */
+.currency-pagination {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.pagination-toggle {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.pagination-toggle:hover {
+  background-color: #2970e3;
+  transform: translateY(-2px);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.pagination-controls button {
+  padding: 4px 8px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+}
+
+.pagination-controls button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.pagination-controls button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.pagination-controls button:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  color: #6c757d;
+}
+
+.pagination-controls span {
+  padding: 4px 8px;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+}
+
+.clear-cache-btn {
+  padding: 6px 12px;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+.clear-cache-btn:hover {
+  background-color: #e9ecef;
+}
+
+/* Lazy loading styles */
+.crypto-chart-container {
+  position: relative;
+  margin-top: 2rem;
+  min-height: 400px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.chart-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.load-chart-btn {
+  padding: 10px 16px;
+  background-color: #3a86ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.load-chart-btn:hover {
+  background-color: #2970e3;
+}
+
+/* Browse All Currencies styles */
+.browse-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.browse-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.browse-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.browse-card .favorite-button {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.add-currency-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-top: auto;
+}
+
+.add-currency-btn:hover {
+  background-color: #2970e3;
+}
+
+.add-currency-btn.selected {
+  background-color: var(--success);
+}
+
+/* Enhance pagination controls styling */
+.currency-pagination {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.pagination-toggle {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var (--radius-sm);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pagination-toggle:hover {
+  background-color: #2970e3;
+  transform: translateY(-2px);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-controls button {
+  padding: 0.5rem 1rem;
+  background-color: var(--light);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.pagination-controls button:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.pagination-controls button:last-child {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: var(--background);
+}
+
+.pagination-controls button:disabled {
+  background-color: var(--light);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.clear-cache-btn {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-left: auto;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.clear-cache-btn:hover {
+  background-color: var(--background);
+  transform: translateY(-2px);
+}
+
+.no-currencies {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-xl);
+  background-color: var(--light);
+  border-radius: var(--radius-md);
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Ensure dark mode compatibility */
+[data-theme='dark'] .pagination-controls span {
+  background-color: var(--card-bg);
+}
+
+[data-theme='dark'] .pagination-controls button {
+  background-color: var(--dark);
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .pagination-controls button:hover:not(:disabled) {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* At the end of the file add these new styles */
+
+/* Chart mode toggle styles */
+.chart-mode-toggle {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.chart-mode-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chart-mode-btn.active {
+  background-color: #e3f2fd;
+  border-color: #90caf9;
+  color: #1565c0;
+}
+
+.chart-mode-btn:hover {
+  background-color: #e9ecef;
+}
+
+/* Multiple charts view styles */
+.multi-chart-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.multi-chart-view h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.individual-chart {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-md);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.individual-chart:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Ensure dark mode compatibility for chart toggle */
+[data-theme='dark'] .chart-mode-btn {
+  background-color: var(--light);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] .chart-mode-btn.active {
+  background-color: rgba(25, 118, 210, 0.2);
+  border-color: #4d94ff;
+  color: #4d94ff;
+}
+
+[data-theme='dark'] .chart-mode-btn:hover {
+  background-color: var(--dark);
+}
+
+/* Make individual charts responsive */
+@media (min-width: 992px) {
+  .multi-chart-view.two-charts .individual-chart {
+    width: 48%;
+    display: inline-block;
+    margin-right: 2%;
+  }
+}
+
+/* Add loading spinner for charts */
+.chart-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(58, 134, 255, 0.1);
+  border-left-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Single chart view styles - updated for full width */
+.single-chart-view {
+  width: 100%;
 }

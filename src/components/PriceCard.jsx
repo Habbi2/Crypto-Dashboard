@@ -9,6 +9,7 @@ const PriceCard = ({
     isActive, 
     onClick, 
     isFavorite, 
+    hasAlert,
     onFavoriteToggle 
 }) => {
     // Determine styling classes based on price change
@@ -28,15 +29,20 @@ const PriceCard = ({
         >
             <div className="price-card-header">
                 <h2>{currency}/USDT</h2>
-                <button 
-                    className={`favorite-button ${isFavorite ? 'active' : ''}`}
-                    onClick={handleFavoriteClick}
-                    title={isFavorite ? "Remove from favorites" : "Add to favorites"}
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill={isFavorite ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                </button>
+                <div className="price-card-actions">
+                    {hasAlert && (
+                        <span className="alert-indicator" title="Price alert active">⚠️</span>
+                    )}
+                    <button 
+                        className={`favorite-button ${isFavorite ? 'active' : ''}`}
+                        onClick={handleFavoriteClick}
+                        title={isFavorite ? "Remove from favorites" : "Add to favorites"}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill={isFavorite ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
             </div>
             
             <p>
