@@ -55,14 +55,26 @@ crypto-dashboard
    ```
    cd crypto-dashboard
    ```
-3. Install dependencies:
+3. **Important**: This project requires Node.js v16 for compatibility:
+   * Windows users: Install Node.js v16 from [nodejs.org](https://nodejs.org/download/release/latest-v16.x/)
+   * Users with nvm: Run `nvm use` to automatically use the correct version
+4. Install dependencies:
    ```
    npm install
    ```
-4. Start the development server:
+5. Start the development server:
    ```
    npm start
    ```
+
+## Node.js Version Compatibility
+This project is optimized for Node.js v16. Using newer versions (like v22+) may cause build failures with 
+"unsupported digital envelope routines" errors due to changes in OpenSSL implementations.
+
+If you must use a newer Node.js version:
+* Ensure the `NODE_OPTIONS=--openssl-legacy-provider` flag is used (already configured in package.json scripts)
+* On Windows, you may need to use `set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build`
+* On Linux/Mac, use `export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build`
 
 ## Deployment
 This project is configured for deployment on Netlify. Ensure that the `netlify.toml` file is correctly set up with the necessary build settings.
